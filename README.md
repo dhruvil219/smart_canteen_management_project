@@ -1,0 +1,1 @@
+# smart_canteen_management_project
