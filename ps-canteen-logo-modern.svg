@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360" height="88" viewBox="0 0 360 88" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">PS Canteen – modern minimal logo</title>
+  <desc id="desc">A minimal plate emblem with fork and spoon in warm orange/green tones and a bold friendly wordmark reading PS Canteen</desc>
+  <defs>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF8A34" />
+      <stop offset="100%" stop-color="#F05A28" />
+    </linearGradient>
+    <linearGradient id="fresh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38C172" />
+      <stop offset="100%" stop-color="#21824F" />
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Emblem: plate with fork & spoon -->
+  <g transform="translate(10,10)" filter="url(#soft)">
+    <!-- plate outer ring -->
+    <circle cx="34" cy="34" r="32" fill="#FFF8F2" stroke="url(#warm)" stroke-width="4"/>
+    <!-- plate inner -->
+    <circle cx="34" cy="34" r="22" fill="#FFFFFF" stroke="#FFE1CF" stroke-width="2"/>
+    <!-- fork (left) -->
+    <g transform="translate(20,16)" stroke="url(#fresh)" stroke-width="3" stroke-linecap="round">
+      <path d="M0 0 v10"/>
+      <path d="M6 0 v10"/>
+      <path d="M12 0 v10"/>
+      <path d="M6 10 v22"/>
+    </g>
+    <!-- spoon (right) -->
+    <g transform="translate(44,16)" stroke="url(#fresh)" stroke-width="3" stroke-linecap="round" fill="#38C172">
+      <path d="M0 10 q6-2 6-7 a6 6 0 1 0 -12 0 q0 5 6 7 v20" fill="none"/>
+    </g>
+    <!-- subtle steam hint for warm, inviting feel -->
+    <path d="M28 14 q4-6 0-10" stroke="url(#warm)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(96,56)">
+    <text font-family="'Poppins', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="800" font-size="28" fill="url(#warm)">PS</text>
+    <text x="64" font-family="'Poppins', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="600" font-size="26" fill="#2C3E50">Canteen</text>
+  </g>
+
+  <!-- Small tagline line for balance -->
+  <rect x="96" y="62" width="180" height="2" rx="1" fill="url(#fresh)" opacity="0.25"/>
+</svg>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320" height="64" viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">PS canteen logo</title>
+  <desc id="desc">A green leaf emblem with the letters P S and a clean wordmark reading PS canteen</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#36c66b"/>
+      <stop offset="100%" stop-color="#1f9a52"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2c3e50"/>
+      <stop offset="100%" stop-color="#1f2d3a"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Emblem: rounded leaf -->
+  <g filter="url(#soft)">
+    <path d="M16 8c10-4 26-4 36 8s12 30-6 36c-18 6-38-6-38-22 0-10 4-18 8-22z" fill="url(#g1)"/>
+    <!-- Leaf vein -->
+    <path d="M20 20c8 6 16 10 28 12" stroke="#fff" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- PS letters inside emblem -->
+  <g transform="translate(10, 13)">
+    <text x="18" y="16" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-weight="800" font-size="16" text-anchor="middle" fill="#ffffff">P</text>
+    <text x="28" y="30" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-weight="800" font-size="16" text-anchor="middle" fill="#ffffff">S</text>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(76, 42)">
+    <text font-family="'Poppins', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="700" font-size="26" fill="url(#g2)">PS</text>
+    <text x="58" font-family="'Poppins', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="500" font-size="24" fill="#2c3e50" opacity="0.95">canteen</text>
+  </g>
+</svg>

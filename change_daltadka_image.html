@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Dal Tadka Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .current-image {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .current-image img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .upload-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .file-input {
+            margin: 10px 0;
+        }
+        input[type="file"] {
+            padding: 10px;
+            border: 2px dashed #ddd;
+            border-radius: 5px;
+            width: 100%;
+            background: white;
+        }
+        .preview {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .preview img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        .button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .button:hover {
+            background: #45a049;
+        }
+        .button.secondary {
+            background: #2196F3;
+        }
+        .button.secondary:hover {
+            background: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍛 Change Dal Tadka Image</h1>
+        
+        <div class="current-image">
+            <h3>Current Image:</h3>
+            <img src="daltadka.jpg" alt="Current Dal Tadka" id="currentImage">
+            <p><strong>File:</strong>daltadka.jpg</p>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <ol>
+                <li>Select a new image file below (JPG, PNG, or WebP recommended)</li>
+                <li>Preview your new image</li>
+                <li>Click "Save New Image" to replace the current one</li>
+                <li>The database is already configured to use the new image</li>
+            </ol>
+        </div>
+
+        <div class="upload-section">
+            <h3>Upload New Dal Tadka Image:</h3>
+            <div class="file-input">
+                <input type="file" id="imageInput" accept="image/*" onchange="previewImage()">
+            </div>
+            
+            <div class="preview" id="preview" style="display: none;">
+                <h4>Preview:</h4>
+                <img id="previewImg" alt="Preview">
+            </div>
+            
+            <button class="button" onclick="saveImage()">💾 Save New Image</button>
+            <button class="button secondary" onclick="downloadSample()">📥 Download Sample Dal Tadka Image</button>
+        </div>
+
+        <div class="instructions">
+            <h3>🔧 Alternative Method:</h3>
+            <p>You can also manually replace the image by:</p>
+            <ol>
+                <li>Navigate to: <code>c:\xampp\htdocs\vegcanteen\images\</code></li>
+                <li>Replace <code>daltadka.jpg</code> with your new image</li>
+                <li>Keep the same filename: <code>daltadka.jpg</code></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function previewImage() {
+            const input = document.getElementById('imageInput');
+            const preview = document.getElementById('preview');
+            const previewImg = document.getElementById('previewImg');
+            
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function saveImage() {
+            const input = document.getElementById('imageInput');
+            
+            if (!input.files || !input.files[0]) {
+                alert('Please select an image first!');
+                return;
+            }
+
+            const file = input.files[0];
+            const fileName = 'daltadka.jpg';
+            
+            // Create a download link for the user to save the file manually
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(file);
+            link.download = fileName;
+            link.click();
+            
+            alert(`Image prepared for download as "${fileName}".\n\nPlease save it to: c:\\xampp\\htdocs\\vegcanteen\\images\\${fileName}`);
+        }
+
+        function downloadSample() {
+            // Create a canvas with a sample Dal Tadka image placeholder
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 400;
+            canvas.height = 300;
+            
+            // Create a gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 400, 300);
+            gradient.addColorStop(0, '#ff9800');
+            gradient.addColorStop(1, '#ff5722');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 400, 300);
+            
+            // Add text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 32px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Dal Tadka', 200, 120);
+            
+            ctx.font = '18px Arial';
+            ctx.fillText('Yellow lentils tempered', 200, 160);
+            ctx.fillText('with spices', 200, 185);
+            
+            ctx.font = 'bold 24px Arial';
+            ctx.fillText('₹80.00', 200, 230);
+            
+            // Convert to blob and download
+            canvas.toBlob(function(blob) {
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'daltadka.jpg';
+                link.click();
+            }, 'image/jpeg', 0.9);
+        }
+
+        // Check if current image exists
+        document.getElementById('currentImage').onerror = function() {
+            this.src = 'images/daltadka.jpg';
+            this.alt = 'Image not found - using default';
+        };
+    </script>
+</body>
+</html>

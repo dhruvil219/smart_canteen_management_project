@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="380" height="96" viewBox="0 0 380 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">PS Canteen – modern minimal food logo</title>
+  <desc id="desc">A clean emblem mixing a plate with fork and coffee steam in warm orange and fresh green, plus a bold friendly PS Canteen wordmark</desc>
+  <defs>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF914D"/>
+      <stop offset="100%" stop-color="#F15A24"/>
+    </linearGradient>
+    <linearGradient id="fresh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38C172"/>
+      <stop offset="100%" stop-color="#21824F"/>
+    </linearGradient>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <!-- Emblem: plate + fork + cup steam -->
+  <g transform="translate(10,12)" filter="url(#soft)">
+    <!-- plate -->
+    <circle cx="36" cy="36" r="34" fill="#FFF7F0" stroke="url(#warm)" stroke-width="4"/>
+    <circle cx="36" cy="36" r="24" fill="#FFFFFF" stroke="#FFE2CF" stroke-width="2"/>
+    <!-- fork (left) -->
+    <g transform="translate(18,16)" stroke="url(#fresh)" stroke-width="3" stroke-linecap="round">
+      <path d="M0 0 v10"/>
+      <path d="M6 0 v10"/>
+      <path d="M12 0 v10"/>
+      <path d="M6 10 v26"/>
+    </g>
+    <!-- cup + steam (right) -->
+    <g transform="translate(48,18)">
+      <!-- cup body -->
+      <path d="M0 20 h14 a6 6 0 0 0 0 -12 h-14 z" fill="url(#warm)"/>
+      <!-- saucer line -->
+      <path d="M-2 32 h22" stroke="#E6D6C6" stroke-width="2" stroke-linecap="round"/>
+      <!-- steam -->
+      <path d="M6 4 q4 -6 0 -12" stroke="url(#fresh)" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+    <!-- subtle divider inside plate -->
+    <path d="M22 30 q14 10 28 12" stroke="#F3E7DE" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(98,62)">
+    <text font-family="'Poppins', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="800" font-size="30" fill="url(#warm)">PS</text>
+    <text x="70" font-family="'Poppins', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="600" font-size="28" fill="#2C3E50">Canteen</text>
+  </g>
+</svg>
